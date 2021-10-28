@@ -1,12 +1,16 @@
+package store
+
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/gerkibz/go_url_shortener/store"
+	"github.com/stretchr/testify/assert"
 )
 
 var testStoreService = &StorageService{}
 
 func init() {
-	testStoreService = initializeStore()
+	testStoreService = (*StorageService)(store.InitializeStore())
 }
 func TestStoreInit(t *testing.T) {
 	assert.True(t, testStoreService.redisClient != nil)
@@ -25,4 +29,3 @@ func TestInsertionAndRetrieval(t *testing.T) {
 
 	assert.Equal(t, initialLink, retrievedUrl)
 }
-
