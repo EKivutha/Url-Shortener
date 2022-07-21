@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "147d0b15-f1e3-41c5-9159-dab6c80b4c04",
+		"name": "Golan Url Shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Shorten url",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Shorten url",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"long_url\": \"https://www.guru3d.com/news-story/spotted-ryzen-threadripper-pro-3995wx-processor-with-8-channel-ddr4,2.html\",\r\n    \"user_id\" : \"e0dba740-fc4b-4977-872c-d360239e6b10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9808/create-short-url",
+							"host": [
+								"localhost"
+							],
+							"port": "9808",
+							"path": [
+								"create-short-url"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Jul 2022 19:24:58 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "89"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"short url created successfully\",\n    \"short_url\": \"http://localhost:9808/9Zatkhpi\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get long url",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
