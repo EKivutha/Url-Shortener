@@ -3,8 +3,8 @@ package handler
 import (
 	"net/http"
 
-	"github.com/gerkibz/go_url_shortener/shortener"
-	"github.com/gerkibz/go_url_shortener/store"
+	"github.com/EKivutha/Url-Shortener/shortener"
+	"github.com/EKivutha/Url-Shortener/store"
 	"github.com/gin-gonic/gin"
 )
 
@@ -33,6 +33,10 @@ func CreateShortUrl(c *gin.Context) {
 func HandleShortUrlRedirect(c *gin.Context) {
 	shortUrl := c.Param("shortUrl")
 	initialUrl := store.RetrieveInitialUrl(shortUrl)
+	c.JSON(200, gin.H{
+		"message":     "short url created successfully",
+		"initial_url": initialUrl,
+	})
 	c.Redirect(302, initialUrl)
 
 }
