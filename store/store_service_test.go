@@ -3,7 +3,7 @@ package store
 import (
 	"testing"
 
-	"github.com/gerkibz/go_url_shortener/store"
+	"github.com/EKivutha/Url-Shortener/store"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/gerkibz/go_url_shortener/handler"
-	"github.com/gerkibz/go_url_shortener/store"
+	"github.com/EKivutha/Url-Shortener/handler"
+	"github.com/EKivutha/Url-Shortener/store"
 	"github.com/gin-gonic/gin"
 )
 
@@ -25,6 +25,7 @@ func main() {
 
 	store.InitializeStore()
 	// fmt.Printf("Hello Go URL Shortener !🚀")
+	// r.Run(":9808")
 	err := r.Run(":9808")
 	if err != nil {
 		panic(fmt.Sprintf("Failed to start the web server - Error: %v", err))

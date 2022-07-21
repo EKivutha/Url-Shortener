@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/go-redis/redis"
+	"github.com/go-redis/redis/v8"
 )
 
 type StorageService struct {
@@ -23,7 +23,7 @@ const CacheDuration = 6 * time.Hour
 func InitializeStore() *StorageService {
 	redisClient := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
-		Password: "1234",
+		Password: "",
 		DB:       0,
 	})
 	pong, err := redisClient.Ping(ctx).Result()
